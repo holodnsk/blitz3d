@@ -2,7 +2,7 @@ Graphics3D 640, 480
 SetBuffer BackBuffer()
 
 cube4=CreateCube()
-PositionEntity cube4,0,-2,0
+PositionEntity cube4,0,0,0
 ScaleEntity cube4,0.5,0.3,0.5
 EntityColor cube4,255,0,0
 
