@@ -42,6 +42,8 @@ EntityTexture cube5,tex
 
 cone4=CreateCone(32,True,cube5)
 PositionEntity cone4,0,2,0
+tex=LoadTexture ("3.jpg")
+EntityTexture cone4,tex
 
 For i=1 To 50 
 cube6=CopyEntity(cube5)
@@ -64,15 +66,29 @@ EntityTexture house,tex
 garage=CreateCube(house)
 PositionEntity garage,-1.5,-0.5,0	
 ScaleEntity garage,0.5,0.5,1
+tex=LoadTexture ("7.jpg")
+EntityTexture garage,tex
 
 roof1=CreateCube(house)
-PositionEntity roof1,-1,1.7,0
+PositionEntity roof1,-0.5,1.7,0
 ScaleEntity roof1,1,0.1,1
-TurnEntity roof1,0,0,20
+TurnEntity roof1,0,0,60
+tex=LoadTexture ("3.jpg")
+EntityTexture roof1,tex
 
 roof2=CopyEntity (roof1,house)
-PositionEntity roof2,1,1.7,0
-TurnEntity roof2,0,0,-40
+PositionEntity roof2,0.5,1.7,0
+TurnEntity roof2,0,0,-120
+tex=LoadTexture ("3.jpg")
+EntityTexture roof2,tex
+
+cylinder=CreateCylinder(8,house)
+PositionEntity cylinder,0.5,0,-1.5
+
+For a=1 To 10
+house2=CopyEntity(house)
+PositionEntity house2,Rnd(20,40),0,Rnd(20,40)
+Next 
 
 While Not KeyDown(1)
 
