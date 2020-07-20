@@ -82,12 +82,25 @@ TurnEntity roof2,0,0,-120
 tex=LoadTexture ("3.jpg")
 EntityTexture roof2,tex
 
-cylinder=CreateCylinder(8,house)
-PositionEntity cylinder,0.5,0,-1.5
+roof3=CreateCube (house)
+PositionEntity roof3,1,-0.2,-1.8
+ScaleEntity roof3,1,0.1,1
+TurnEntity roof3,0,0,60
+tex=LoadTexture ("3.jpg")
+EntityTexture roof3,tex
+
+kolonna=CreateCylinder(64,True,house)
+PositionEntity kolonna,0.8,-0.2,-1.8
+ScaleEntity kolonna,0.2,0.8,0.2
+
+kolonna2=CreateCylinder(64,True,house)
+PositionEntity kolonna2,-0.8,-0.2,-1.8
+ScaleEntity kolonna2,0.2,0.8,0.2
+  
 
 For a=1 To 10
 house2=CopyEntity(house)
-PositionEntity house2,Rnd(20,40),0,Rnd(20,40)
+PositionEntity house2,a*20,0,20
 Next 
 
 While Not KeyDown(1)
