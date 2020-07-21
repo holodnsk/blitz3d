@@ -1,10 +1,13 @@
 Graphics3D 640, 480
 SetBuffer BackBuffer()
+Const tc=1,tp=2
+Collisions tc,tp,1,1
 
 car=CreateCube()
 PositionEntity car,0,-0.5,4
 ScaleEntity car,0.5,0.3,0.5
 EntityColor car,255,0,0
+EntityType car,tc
 
 cam=CreateCamera(car)
 PositionEntity cam,0,0,-5
@@ -45,7 +48,7 @@ PositionEntity cone4,0,2,0
 tex=LoadTexture ("3.jpg")
 EntityTexture cone4,tex
 
-For i=1 To 50 
+For i=1 To 64 
 cube6=CopyEntity(cube5)
 PositionEntity cube6,i*4,0,0
 Next  
@@ -83,24 +86,62 @@ tex=LoadTexture ("3.jpg")
 EntityTexture roof2,tex
 
 roof3=CreateCube (house)
-PositionEntity roof3,1,-0.2,-1.8
+PositionEntity roof3,-0,0.7,-1.8
 ScaleEntity roof3,1,0.1,1
-TurnEntity roof3,0,0,60
+TurnEntity roof3,-10,0,0
 tex=LoadTexture ("3.jpg")
 EntityTexture roof3,tex
 
 kolonna=CreateCylinder(64,True,house)
 PositionEntity kolonna,0.8,-0.2,-1.8
 ScaleEntity kolonna,0.2,0.8,0.2
+tex=LoadTexture ("7.jpg")
+EntityTexture kolonna,tex
 
 kolonna2=CreateCylinder(64,True,house)
 PositionEntity kolonna2,-0.8,-0.2,-1.8
 ScaleEntity kolonna2,0.2,0.8,0.2
-  
+tex=LoadTexture ("7.jpg")
+EntityTexture kolonna2,tex  
 
-For a=1 To 10
+lake=CreateCylinder(64,True,house)
+PositionEntity lake,2.5,-1,0
+ScaleEntity lake,1,0.00005,1
+tex=LoadTexture ("8.jpeg")
+EntityTexture lake,tex
+
+car2=LoadSprite("11.png",4,house)
+PositionEntity car2,-3,-0.6,0
+ScaleSprite car2,3,3
+
+For a=2 To 12
 house2=CopyEntity(house)
-PositionEntity house2,a*20,0,20
+PositionEntity house2,a*20,1,15
+Next 
+
+palma=LoadSprite("9.png",4)
+PositionEntity palma,0,3,-3
+SpriteViewMode palma,4
+ScaleSprite palma,2,4
+EntityType palma,tp 
+
+obezjana=LoadSprite("12.png",4,palma)
+PositionEntity obezjana,0.2,-3.8,0.2
+
+For b=1 To 150
+palma2=CopyEntity(palma)
+EntityType palma2,tp
+PositionEntity palma2,Rnd(-40,0),3,Rnd(-40,80)
+Next 
+
+derevo=LoadSprite("10.png",4)
+PositionEntity derevo,0,3,-3
+SpriteViewMode derevo,4
+ScaleSprite derevo,2,4
+
+For b=1 To 150
+derevo2=CopyEntity(derevo)
+PositionEntity derevo,Rnd(-40,0),3,Rnd(-40,80)
 Next 
 
 While Not KeyDown(1)
