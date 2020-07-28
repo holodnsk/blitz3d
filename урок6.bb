@@ -109,6 +109,10 @@ PositionEntity lake,2.5,-1,0
 ScaleEntity lake,1,0.00005,1
 tex=LoadTexture ("8.jpeg")
 EntityTexture lake,tex
+obezjani=LoadSprite("13.png",4,osobnjk)
+PositionEntity obezjani,0,1.5,0
+SpriteViewMode obezjani,4
+ScaleSprite obezjani,0.5,0.5
 
 car2=LoadSprite("11.png",4,house)
 PositionEntity car2,-3,-0.6,0
